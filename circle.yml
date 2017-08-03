@@ -9,4 +9,6 @@ dependencies:
 
 test:
   override:
+    - for i in $(seq 10); do time openfisca-run-test tests/test_taux_effort.yaml --extensions openfisca_paris; done; true
+    - for i in $(seq 10); do time openfisca-run-test . --extensions openfisca_paris; done; true
     - ./run-tests.sh
