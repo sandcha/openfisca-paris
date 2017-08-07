@@ -6,7 +6,7 @@ dependencies:
   override:
     - pip install --upgrade pip wheel
     - pip install . --upgrade
-    - pip install git+https://github.com/guillett/openfisca-core.git@f8d92084c30e28fa541ad9fdc4021d40ded1ffa7#egg=OpenFisca-Core --upgrade
+    - pip install git+https://github.com/guillett/openfisca-core.git@934e9b16712dfdf4cf308fd443079a9fed75df24#egg=OpenFisca-Core --upgrade
 
 test:
   override:
