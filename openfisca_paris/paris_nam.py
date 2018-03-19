@@ -23,7 +23,12 @@ class paris_nam_eligibilite_financiere(Variable):
     definition_period = MONTH
 
     def formula(foyer_fiscal, period):
-        return -foyer_fiscal('irpp', period.n_2) <= 2028
+        eligibilite_personnelle = foyer_fiscal.members('paris_nam_eligibilite_personnelle', period.last_year, options = [ADD])
+        renouvelement = foyer_fiscal.sum(eligibilite_personnelle)
+        return (
+            + (-foyer_fiscal('irpp', period.n_2) <= 2028)
+            + renouvelement * (-foyer_fiscal('irpp', period.n_2) <= 2430)
+            )
 
 
 class paris_nam(Variable):
