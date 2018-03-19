@@ -65,7 +65,7 @@
     personne_de_reference: isole
   individus:
   - id: isole
-    age: 70
+    paris_personnes_handicap: 70
   foyers_fiscaux:
     declarants:
       - isole 
@@ -73,4 +73,3 @@
       2016: -2028
   output_variables:
     paris_nam: True
-
