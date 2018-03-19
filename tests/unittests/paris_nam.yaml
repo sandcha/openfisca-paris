@@ -1,0 +1,76 @@
+- name: Personne de 70 ans hors Paris non-éligible
+  period: 2018-03
+  familles:
+    parents:
+      - isole
+    parisien: False
+  menages:
+    personne_de_reference: isole
+  individus:
+  - id: isole
+    age: 70
+  foyers_fiscaux:
+    declarants:
+      - isole 
+    irpp:
+      2016: -2028
+  output_variables:
+    paris_nam: False
+
+- name: Personne de 70 ans seule éligible
+  period: 2018-03
+  familles:
+    parents:
+      - isole
+    parisien: True
+  menages:
+    personne_de_reference: isole
+  individus:
+  - id: isole
+    age: 70
+  foyers_fiscaux:
+    declarants:
+      - isole 
+    irpp:
+      2016: -2028
+  output_variables:
+    paris_nam: True
+
+- name: Personne de 70 ans seule inéligible
+  period: 2018-03
+  familles:
+    parents:
+      - isole
+    parisien: True
+  menages:
+    personne_de_reference: isole
+  individus:
+  - id: isole
+    age: 70
+  foyers_fiscaux:
+    declarants:
+      - isole 
+    irpp:
+      2016: -2029
+  output_variables:
+    paris_nam: False
+
+- name: Personne handicapée seule éligible
+  period: 2018-03
+  familles:
+    parents:
+      - isole
+    parisien: True
+  menages:
+    personne_de_reference: isole
+  individus:
+  - id: isole
+    age: 70
+  foyers_fiscaux:
+    declarants:
+      - isole 
+    irpp:
+      2016: -2028
+  output_variables:
+    paris_nam: True
+
