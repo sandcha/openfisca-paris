@@ -16,6 +16,9 @@ jobs:
           name: Install dependencies
           command: pip install . --upgrade && pip install ".[test]"
       - run:
+          name: Override OpenFisca France
+          command: pip install --upgrade git+https://github.com/openfisca/openfisca-france.git@aah_fixup#egg=openfisca-France
+      - run:
           name: Run unit tests
           command: openfisca-run-test tests/unittests/*.yaml --extensions openfisca_paris
       - run:
