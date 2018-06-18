@@ -5,7 +5,8 @@ machine:
 dependencies:
   override:
     - pip install --upgrade pip wheel
-    - pip install . --upgrade
+    - pip install --upgrade .
+    - pip install --upgrade git+https://github.com/openfisca/openfisca-france.git@aah_fixup#egg=openfisca-France
 
 test:
   override:
