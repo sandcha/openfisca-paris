@@ -58,7 +58,7 @@ class paris_logement_psol_montant(Variable):
         nb_personne_handicap = famille.sum(personne_handicap_individu)
         paris_base_ressources_commun = famille('paris_base_ressources_commun', last_month)
         aspa = famille('aspa', last_month)
-        asi = famille('asi', last_month)
+        asi = famille.sum(famille.members('asi', last_month))
         aah = famille('paris_base_ressources_aah', last_month)
         ressources_conjoint = famille.conjoint('paris_base_ressources_commun_i', last_month)
 
